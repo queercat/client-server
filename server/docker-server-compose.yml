@@ -1,0 +1,10 @@
+version: '1'
+services:
+  redis-server:
+    image: redis
+    ports:
+      - "6379:6379"
+  server:
+    build: .
+    ports:
+      - "8080:8000"
