@@ -1,3 +1,4 @@
+version: "3"
 services:
   session-redis:
     image: redis
@@ -9,12 +10,3 @@ services:
     container_name: "dynamic-player-data"
     ports:
       - "6380:6379"
-  server:
-    build: .
-    environment:
-      - SERVER_PORT=80
-    ports:
-      - "8080:80"
-    depends_on:
-      - "session-redis"
-      - "player-redis"
