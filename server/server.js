@@ -90,7 +90,7 @@ app.get('/api/createPlayer', async (req, res) => {
 
     // put the session into the session information database.
     await utils.createSession(playerSessionContext, sessionInformation, sessionID);
-    // create another new session into the dynamic data database.
+    // create another new session into the dynamic data database, this is where we might put new information.
     await utils.createSession(playerDataContext, {x: 0, y: 0}, sessionID);
 
     res.send(JSON.stringify(sessionInformation));
